@@ -29,3 +29,19 @@ app.get('/api/notes',(req, res)=>{
         res.json(output);
     });
 });
+
+// sends new note to the database
+app.post('/api/notes',(req,res)=>{
+    let newNote = req.body;
+    newNote.id = uuidv4();
+    fs.readFile('./db/db.json','utf-8',(error, data)=>{
+        error ? console.error("Error reading this file:", err) : console.log('success');
+        let output = JSON.parse(data);
+        output.push(newNote);
+
+        fs.writeFile('./db/db.json',JSON.stringify(output),(error)=>{
+            error ? console.error('error updating the data') : console.log("success");
+        });
+    });
+    res.json(newNote);
+});
