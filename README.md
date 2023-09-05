@@ -24,6 +24,16 @@ To run the Note Taker application on your local machine, follow these steps:
 3. Install the required dependencies using npm install.
 4. Start the application with npm start.
 
+## Usage
+Once the application is running, open your web browser and navigate to the provided URL. You will be greeted with the Note Taker interface. Here's how to use the application:
+
+1. Click on the "Get Started" button to access the note-taking interface.
+2. Enter a title and the content of your note, then click the floppy disk icon to save.
+3. Your note will be added to the left sidebar for easy access.
+4. Click on a saved note to view it
+
+The user can has the ability to delete a note by clicking on the trash can icon, but the page must be refreshed to see the deletion. This is a bug that will be worked out in the future.
+
 ## Contact Me!
 - GitHub: [jesustgr](https://github.com/jesustgr)
 - Email: jesustgreyes@gmail.com
