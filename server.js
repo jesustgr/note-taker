@@ -20,3 +20,12 @@ app.get('*',(req,res)=>{
 app.get('/notes',(req,res)=>{
     res.sendFile(path.join(__dirname, "public" ,'notes.html')); 
 })
+
+// renders all notes
+app.get('/api/notes',(req, res)=>{
+    fs.readFile('./db/db.json','utf-8',(error, data)=>{
+        error ? console.error("Error reading this file:", err) : console.log('success');
+        let output = JSON.parse(data);
+        res.json(output);
+    });
+});
