@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');
+// const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 
@@ -45,3 +45,7 @@ app.post('/api/notes',(req,res)=>{
     });
     res.json(newNote);
 });
+
+app.listen(PORT, () => 
+    console.log(`Example app listening at http://localhost:${PORT}`)
+    );
